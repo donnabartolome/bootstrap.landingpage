@@ -414,11 +414,10 @@ section header p {
 }
 
 .cta-wrapper .btn {
-    background: #53777a;
     border-radius: 0;
     padding: 5px 30px;
-    border-bottom: 5px solid #476163;
     color: #ffffff;
+    text-transform: uppercase;
 }
 
 .cta-wrapper .btn-trial {
