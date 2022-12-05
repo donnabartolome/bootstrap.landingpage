@@ -454,11 +454,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="/assets/script.js"></script>
+    <!-- <script src="../assets/script.js"></script> -->
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        window.addEventListener('DOMContentLoaded', event => {
+            var navbarShrink = function () {
+                const navbarCollapsible = document.body.querySelector('#mainNav');
+                if (!navbarCollapsible) {
+                    return;
+                }
+                if (window.scrollY === 0) {
+                    navbarCollapsible.classList.remove('navbar-shrink')
+                } else {
+                    navbarCollapsible.classList.add('navbar-shrink')
+                }
+
+            };
+
+            navbarShrink();
+
+            document.addEventListener('scroll', navbarShrink);
+
+            const mainNav = document.body.querySelector('#mainNav');
+            if (mainNav) {
+                new bootstrap.Scrollspy(document.body, {
+                    target: '#mainNav',
+                    offset: 74,
+                });
+            };
+
+            // Collapse navbar when toggler is visible - Need to fix toggling
+            const navbarToggler = document.body.querySelector('.navbar-toggler');
+            const responsiveNavItems = [].slice.call(
+                document.querySelectorAll('#navbarResponsive .nav-link')
+            );
+
+            responsiveNavItems.map(function (responsiveNavItem) {
+                responsiveNavItem.addEventListener('click', () => {
+                    if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                        navbarToggler.click();
+                    }
+                });
+            });
+        });
     </script>
     
 </body>
