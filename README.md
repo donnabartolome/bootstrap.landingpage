@@ -1,2 +1,2 @@
 # Single Page Application
-Static HTML
+Create a Responsive Single page application /landing page. Add content animation.
