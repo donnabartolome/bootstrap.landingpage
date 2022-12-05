@@ -1,2 +1,2 @@
-# deveire
+# Single Page Application
 Static HTML
