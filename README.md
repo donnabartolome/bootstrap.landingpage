@@ -1,4 +1,4 @@
 # Single Page Application
 Create a Responsive Single page application /landing page. Add content animation.
 
-Published: https://donnabartolome.github.io/bootstrap.landingpage
+Viewable via Github Pages: https://donnabartolome.github.io/bootstrap.landingpage
